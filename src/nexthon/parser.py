@@ -24,8 +24,3 @@ class Parser:
         self.eat(TokenType.STRING)
         return variable_name, variable_value
 
-lexer = Lexer('var username = "Nexform"')
-parser = Parser(lexer)
-
-result = parser.parse_variable_declaration()
-print(result)
