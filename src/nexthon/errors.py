@@ -3,3 +3,6 @@ class LexicalError(Exception):
 
 class ParserError(Exception):
     pass
+
+class RuntimeError(Exception):
+    pass

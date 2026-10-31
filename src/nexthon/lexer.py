@@ -2,7 +2,7 @@ from .tokens import Token, TokenType
 from .errors import LexicalError
 
 KEYWORDS = ["var", "print", "if", "else", "while"]
-OPERATORS = ["=", "+", "-", "*", "/"]
+OPERATORS = ["=", "+", "-", "*", "/", "<", ">", "==", "!=", "<=", ">="]
 PUNCTUATION = ["(", ")", "{", "}", ",", ";"]
 
 class Lexer:
@@ -65,13 +65,18 @@ class Lexer:
         character = self.current_char()
         if character is None:
             return Token(TokenType.EOF, "", self.line)
-        if character == "!":
-            self.skip_comment()
-            return self.get_next_token()
         if character.isdigit():
             return self.read_number()
         if character.isalnum() or character == "_":
             return self.read_identifier()
+        if self.source[self.position:self.position + 2] in ("==", "!=", "<=", ">="):
+            operator = self.source[self.position:self.position + 2]
+            self.advance()
+            self.advance()
+            return Token(TokenType.OPERATOR, operator, self.line)
+        if character == "!":
+            self.skip_comment()
+            return self.get_next_token()
         if character in OPERATORS:
             self.advance()
             return Token(TokenType.OPERATOR, character, self.line)
