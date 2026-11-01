@@ -2,7 +2,21 @@
 
 **A general-purpose programming language built from scratch in Python.**
 
-NEXTHON is an experimental programming language designed to provide a simple and readable syntax while exploring the fundamentals of language design, interpreters, lexers and parsers.
+NEXTHON is an experimental programming language designed to provide a simple and readable syntax while exploring the fundamentals of language design, including lexers, parsers, abstract syntax trees and interpreters.
+
+## Screenshots
+
+### Code Editor
+
+![NEXTHON Code](assets/nexthon-code.png)
+
+### Program Execution
+
+![NEXTHON Execution](assets/nexthon-execution.png)
+
+### Project Structure
+
+![NEXTHON Project Structure](assets/nexthon-project-structure.png)
 
 ## Features
 
@@ -26,6 +40,10 @@ NEXTHON/
 ├── .vscode/
 │   ├── settings.json
 │   └── tasks.json
+├── assets/
+│   ├── nexthon-code.png
+│   ├── nexthon-execution.png
+│   └── nexthon-project-structure.png
 ├── examples/
 │   ├── hello.ne
 │   ├── math.ne
@@ -39,9 +57,16 @@ NEXTHON/
 │       ├── lexer.py
 │       ├── parser.py
 │       └── tokens.py
+├── vscode-extension/
+│   ├── language-configuration.json
+│   ├── package.json
+│   ├── snippets/
+│   ├── syntaxes/
+│   └── nexthon-language-0.1.0.vsix
+├── .gitignore
 ├── LICENSE
 ├── README.md
-└── nexthon.bat
+└── nexthon.cmd
 ```
 
 ## Getting Started
@@ -49,7 +74,8 @@ NEXTHON/
 ### Requirements
 
 - Python 3
-- Windows (for the provided `.bat` launcher)
+- Windows
+- Visual Studio Code (optional)
 
 ### Clone the repository
 
@@ -60,57 +86,70 @@ cd NEXTHON
 
 ### Run a NEXTHON program
 
-On Windows, use the included launcher:
+From the project directory, run:
 
 ```powershell
-.\nexthon.bat .\examples\hello.ne
+.\nexthon.cmd examples\hello.ne
 ```
 
-Alternatively, set the Python module path and run the interpreter directly:
+You can also use the launcher globally if its directory is available in your PATH:
+
+```powershell
+nexthon examples\hello.ne
+```
+
+### Run the interpreter directly
 
 ```powershell
 $env:PYTHONPATH = "src"
-py -m nexthon.interpreter .\examples\hello.ne
+py -m nexthon.interpreter examples\hello.ne
 ```
 
 ## Example
 
 ```ne
+var score = 17
+var number = 12
+
+print("Addition:")
+print(score + number)
+
+print("Multiplication:")
+print(score * number)
+
 function greet(name) {
-    print("Hello " + name)
+    print("Hello, " + name)
 }
 
-var score = 100
-
-if score >= 50 {
-    print("Level completed!")
-} else {
-    print("Try again!")
-}
-
-greet("Nexform")
-```
-
-Output:
-
-```text
-Level completed!
-Hello Nexform
+greet("NEXTHON")
 ```
 
 ## VS Code Support
 
 NEXTHON source files use the `.ne` extension.
 
-The repository includes VS Code workspace settings and a task for running the currently active NEXTHON file with `Ctrl + Shift + B`.
+The repository includes a VS Code workspace configuration and a task for running the currently active NEXTHON file with `Ctrl + Shift + B`.
 
-Syntax highlighting is available through the separate NEXTHON Language extension.
+A separate language extension provides:
+
+- Syntax highlighting
+- Language recognition for `.ne` files
+- Code snippets
+- Basic language configuration
+
+### Install the VS Code extension
+
+Open a terminal in the `vscode-extension` directory and run:
+
+```powershell
+code --install-extension .\nexthon-language-0.1.0.vsix --force
+```
 
 ## Development
 
 NEXTHON is an ongoing learning and development project.
 
-The language is still experimental, and its syntax and features may evolve over time.
+The language is experimental, and its syntax and features may evolve over time.
 
 ## License
 
@@ -119,4 +158,3 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 ---
 
 **Created by [Nexform-star](https://github.com/Nexform-star)**
-
