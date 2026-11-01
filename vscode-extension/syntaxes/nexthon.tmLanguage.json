@@ -1,0 +1,141 @@
+{
+    "scopeName": "source.nexthon",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#builtins"
+        },
+        {
+            "include": "#function-declarations"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#punctuation"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.nexthon",
+                    "match": "#.*$"
+                },
+                {
+                    "name": "comment.line.exclamation.nexthon",
+                    "match": "!(?!=).*$"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.nexthon",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.nexthon",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.nexthon",
+                    "match": "\\b\\d+\\.\\d+\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.nexthon",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.nexthon",
+                    "match": "\\b(true|false|null)\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.nexthon",
+                    "match": "\\b(if|elif|else|while|for|in|break|continue|try|except|finally|raise|return)\\b"
+                },
+                {
+                    "name": "storage.type.nexthon",
+                    "match": "\\b(var|const|function)\\b"
+                },
+                {
+                    "name": "keyword.control.import.nexthon",
+                    "match": "\\b(import|as)\\b"
+                },
+                {
+                    "name": "keyword.operator.logical.nexthon",
+                    "match": "\\b(and|or|not)\\b"
+                },
+                {
+                    "name": "keyword.other.nexthon",
+                    "match": "\\b(print)\\b"
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.nexthon",
+                    "match": "\\b(input|type|str|int|float|bool|len|abs|round|min|max|sum|range|enumerate|sorted|reversed|list|tuple|dict|set|sqrt|random|time|exit|json_encode|json_decode|read_file|write_file|append_file|exists)\\b(?=\\s*\\()"
+                }
+            ]
+        },
+        "function-declarations": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.nexthon",
+                    "match": "(?<=function\\s)[A-Za-z_][A-Za-z0-9_]*"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.nexthon",
+                    "match": "\\*\\*=|//=|==|!=|<=|>=|\\+=|-=|\\*=|/=|%=|\\*\\*|//|->|[=+*/%<>-]"
+                }
+            ]
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                    "name": "punctuation.section.block.begin.nexthon",
+                    "match": "\\{"
+                },
+                {
+                    "name": "punctuation.section.block.end.nexthon",
+                    "match": "\\}"
+                },
+                {
+                    "name": "punctuation.separator.nexthon",
+                    "match": "[(),.;:\\[\\]]"
+                }
+            ]
+        }
+    }
+}

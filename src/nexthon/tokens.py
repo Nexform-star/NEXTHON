@@ -1,19 +1,25 @@
 from enum import Enum, auto
 
+
 class TokenType(Enum):
     KEYWORD = auto()
     IDENTIFIER = auto()
     NUMBER = auto()
     STRING = auto()
     OPERATOR = auto()
-    EOF = auto()
     PUNCTUATION = auto()
+    EOF = auto()
 
-    
-class Token():
-    def __init__(self, token_type, value, line):
+
+class Token:
+    def __init__(self, token_type, value, line, column=None):
         self.token_type = token_type
         self.value = value
         self.line = line
-token = Token(TokenType.KEYWORD, "var", 1)
-Token(TokenType.KEYWORD, "var", 1)   
+        self.column = column
+
+    def __repr__(self):
+        return (
+            f"Token({self.token_type.name}, "
+            f"{self.value!r}, line={self.line})"
+        )
