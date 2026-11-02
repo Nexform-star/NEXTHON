@@ -1,9 +1,12 @@
-# NEXTHON
+<p align="center">
+  <img src="vscode-extension/images/nexthon-logo.png" alt="NEXTHON Logo" width="170">
+</p>
+
+<h1 align="center">NEXTHON</h1>
 
 <p align="center">
   <strong>A general-purpose programming language built from scratch in Python.</strong>
 </p>
-
 <p align="center">
   <a href="https://github.com/Nexform-star/NEXTHON">
     <img src="https://img.shields.io/github/stars/Nexform-star/NEXTHON?style=for-the-badge&logo=github&label=Stars" alt="GitHub Stars">
