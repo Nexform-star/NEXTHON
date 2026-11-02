@@ -1,73 +1,70 @@
 # Data Types
 
-NEXTHON supports several data types that allow you to store and manipulate different kinds of information.
+NEXTHON supports several data types that allow you to store and work with different kinds of values.
 
-## 1. Numbers
+## 1. Integers
 
-Numbers are used for mathematical operations.
-
-### Integers
-
-Integers are whole numbers.
+Integers are whole numbers without decimal places.
 
 ```ne
 var age = 16
 var score = 100
 var temperature = -5
+
+print(age)
+print(score)
+print(temperature)
 ```
 
-### Floating-point numbers
+## 2. Floats
 
-Floating-point numbers contain decimal values.
+Floats are numbers that contain decimal places.
 
 ```ne
 var price = 19.99
-var percentage = 75.5
+var average = 15.5
+
+print(price)
+print(average)
 ```
 
-## 2. Strings
+## 3. Strings
 
 Strings are sequences of characters enclosed in quotation marks.
 
 ```ne
 var username = "Nexform"
-var message = "Hello, World!"
+var message = "Welcome to NEXTHON!"
 
 print(username)
 print(message)
 ```
 
-## 3. Booleans
+## 4. Booleans
 
-Booleans represent one of two values: `true` or `false`.
+Booleans represent one of two values: `True` or `False`.
 
 ```ne
-var isActive = true
-var isAdmin = false
+var is_active = True
+var is_admin = False
 
-print(isActive)
-print(isAdmin)
+print(is_active)
+print(is_admin)
 ```
 
-They are commonly used in conditions and logical expressions.
-
-## 4. Lists
+## 5. Lists
 
 Lists store multiple values in an ordered collection.
 
 ```ne
-var languages = ["NEXTHON", "Python", "JavaScript"]
+var numbers = [10, 20, 30]
+var names = ["Alice", "Bob", "Charlie"]
 
-print(languages)
+print(numbers)
+print(names)
 ```
 
-Lists can contain different types of values.
-
-```ne
-var values = [10, "Hello", true]
-```
-
-## 5. Tuples
+## 6. Tuples
 
 Tuples are ordered collections of values.
 
@@ -77,37 +74,61 @@ var coordinates = (10, 20)
 print(coordinates)
 ```
 
-## 6. Dictionaries
+## 7. Dictionaries
 
-Dictionaries store data as key-value pairs.
+Dictionaries store values using key-value pairs.
 
 ```ne
 var player = {
     "name": "Nexform",
-    "score": 100
+    "score": 150
 }
 
 print(player)
 ```
 
-## 7. Sets
+## 8. Sets
 
 Sets store unique values.
 
+Create a set using the `set()` built-in function.
+
 ```ne
-var numbers = {1, 2, 3}
+var numbers = set([1, 2, 3])
 
 print(numbers)
 ```
 
-## 8. The null value
+## 9. None
 
-The `null` value represents the absence of a value.
+`None` represents the absence of a value.
 
 ```ne
-var result = null
+var result = None
 
 print(result)
+```
+
+## 10. Checking data types
+
+Use the `type()` built-in function to identify a value's type.
+
+```ne
+var name = "Nexform"
+var age = 16
+var active = True
+
+print(type(name))
+print(type(age))
+print(type(active))
+```
+
+Output:
+
+```text
+str
+int
+bool
 ```
 
 ## Next steps
