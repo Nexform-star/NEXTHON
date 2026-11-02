@@ -151,7 +151,7 @@ The official VS Code extension provides:
 You can install the extension from the Marketplace or manually using the packaged `.vsix` file.
 
 ```powershell
-code --install-extension .\vscode-extension\nexthon-language-0.1.0.vsix
+code --install-extension .\vscode-extension\nexthon-language-0.1.1.vsix
 ```
 
 ## Community & Contributions
