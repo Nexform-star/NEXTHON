@@ -1,61 +1,65 @@
 # Collections
 
-Collections allow you to store multiple values in a single variable.
-
-NEXTHON supports lists, tuples, dictionaries and sets.
+NEXTHON supports several collection types for storing multiple values.
 
 ## 1. Lists
 
-Lists are ordered collections of values.
+Lists store multiple values in an ordered collection.
 
 ```ne
-var languages = ["NEXTHON", "Python", "JavaScript"]
+var numbers = [10, 20, 30, 40]
 
-print(languages)
+print(numbers)
 ```
 
 ### Accessing elements
 
-List indexes start at `0`.
+Use an index to access an element. Indexes start at `0`.
 
 ```ne
-var languages = ["NEXTHON", "Python", "JavaScript"]
+var numbers = [10, 20, 30]
 
-print(languages[0])
-print(languages[1])
+print(numbers[0])
+print(numbers[1])
 ```
 
-### Modifying lists
+Output:
 
-Lists support methods for modifying their contents.
+```text
+10
+20
+```
+
+### List methods
+
+Lists support methods such as `append()` and `remove()`.
 
 ```ne
 var numbers = [10, 20, 30]
 
 numbers.append(40)
-
 print(numbers)
-```
-
-### Removing elements
-
-```ne
-var numbers = [10, 20, 30]
 
 numbers.remove(20)
-
 print(numbers)
 ```
 
 ## 2. Tuples
 
-Tuples are ordered collections of values.
+Tuples store multiple values in an ordered collection.
 
 ```ne
 var coordinates = (10, 20)
 
 print(coordinates)
 print(coordinates[0])
+```
+
+Output:
+
+```text
+(10, 20)
+10
 ```
 
 ## 3. Dictionaries
@@ -65,44 +69,54 @@ Dictionaries store values using key-value pairs.
 ```ne
 var player = {
     "name": "Nexform",
-    "score": 100
+    "score": 150
 }
 
 print(player["name"])
 print(player["score"])
 ```
 
-### Modifying dictionaries
+### Updating dictionary values
+
+You can update a value using its key.
 
 ```ne
 var player = {
     "name": "Nexform",
-    "score": 100
+    "score": 150
 }
 
-player["score"] = 150
+player["score"] = 200
 
 print(player["score"])
+```
+
+Output:
+
+```text
+200
 ```
 
 ## 4. Sets
 
 Sets store unique values.
 
+Create a set using the `set()` built-in function.
+
 ```ne
-var numbers = {1, 2, 3}
+var numbers = set([1, 2, 3])
 
 print(numbers)
 ```
 
 ## 5. Collection length
 
-Use `len()` to get the number of elements in a collection.
+Use the `len()` built-in function to get the number of elements in a collection.
 
 ```ne
-var languages = ["NEXTHON", "Python", "JavaScript"]
+var numbers = [10, 20, 30]
 
-print(len(languages))
+print(len(numbers))
 ```
 
 Output:
@@ -114,8 +128,8 @@ Output:
 ## Next steps
 
 - [Data Types](data-types.md)
-- [Modules](modules.md)
 - [Built-in Functions](built-in-functions.md)
+- [Functions](functions.md)
 - [Documentation Home](README.md)
 
 ---
