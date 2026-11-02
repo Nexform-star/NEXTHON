@@ -1,11 +1,4 @@
-var name = "Nexform"
+var name = input("What's your name? ")
 
-function greet(name) {
-    print("Hello " + name)
-}
-
-greet(name)
-
-if true {
-    print("NEXTHON is alive!")
-}
+print("Hello, " + name + "!")
+print("Welcome to NEXTHON.")
