@@ -1,60 +1,65 @@
 # Built-in Functions
 
-NEXTHON provides built-in functions that can be used directly in your programs.
+NEXTHON provides several built-in functions to simplify common programming tasks.
 
-These functions cover common operations such as displaying output, converting values, working with collections and handling files.
+## 1. Output
 
-## 1. Input and Output
+### `print()`
 
-| Function | Description |
-|---|---|
-| `print()` | Displays a value |
-| `input()` | Reads user input |
-
-Example:
+Displays a value in the console.
 
 ```ne
 print("Hello, World!")
-
-var username = input("Enter your name: ")
-print(username)
+print(42)
 ```
 
-## 2. Type Conversion
+## 2. User Input
+
+### `input()`
+
+Reads input from the user.
+
+```ne
+var name = input("Enter your name: ")
+print(name)
+```
+
+## 3. Type Conversion
+
+NEXTHON provides functions to convert values between types.
 
 | Function | Description |
 |---|---|
 | `str()` | Converts a value to a string |
 | `int()` | Converts a value to an integer |
-| `float()` | Converts a value to a floating-point number |
+| `float()` | Converts a value to a float |
 | `bool()` | Converts a value to a boolean |
 
 Example:
 
 ```ne
-var number = "42"
+var number = int("42")
+var price = float("19.99")
+var message = str(100)
 
-print(int(number))
-print(float(number))
-print(str(100))
-print(bool(1))
+print(number)
+print(price)
+print(message)
 ```
 
-## 3. Type Information
+## 4. Type Information
 
-| Function | Description |
-|---|---|
-| `type()` | Returns the type of a value |
+### `type()`
 
-Example:
+Returns the type of a value.
 
 ```ne
-var username = "Nexform"
+var name = "Nexform"
 
-print(type(username))
+print(type(name))
 ```
 
-## 4. Mathematical Functions
+## 5. Mathematical Functions
 
 | Function | Description |
 |---|---|
@@ -62,7 +67,7 @@ print(type(username))
 | `round()` | Rounds a number |
 | `min()` | Returns the smallest value |
 | `max()` | Returns the largest value |
-| `sum()` | Calculates the sum of values |
+| `sum()` | Returns the sum of values |
 | `sqrt()` | Calculates the square root |
 
 Example:
@@ -76,7 +81,7 @@ print(sum([10, 20, 30]))
 print(sqrt(25))
 ```
 
-## 5. Collection Functions
+## 6. Collection Functions
 
 | Function | Description |
 |---|---|
@@ -85,9 +90,9 @@ print(sqrt(25))
 | `tuple()` | Creates a tuple |
 | `dict()` | Creates a dictionary |
 | `set()` | Creates a set |
-| `sorted()` | Returns sorted values |
-| `reversed()` | Returns values in reverse order |
-| `enumerate()` | Returns indexed values |
+| `sorted()` | Returns a sorted collection |
+| `reversed()` | Returns a reversed collection |
+| `enumerate()` | Returns indexed elements |
 | `range()` | Generates a sequence of numbers |
 
 Example:
@@ -100,12 +105,12 @@ print(sorted(numbers))
 print(list(reversed(numbers)))
 ```
 
-## 6. Random and Time Functions
+## 7. Random and Time Functions
 
 | Function | Description |
 |---|---|
-| `random()` | Generates a random value |
-| `time()` | Returns the current time value |
+| `random()` | Generates a random number |
+| `time()` | Returns the current timestamp |
 
 Example:
 
@@ -114,72 +119,57 @@ print(random())
 print(time())
 ```
 
-## 7. Program Control
-
-| Function | Description |
-|---|---|
-| `exit()` | Stops program execution |
-
-Example:
-
-```ne
-print("Program started")
-
-exit()
-
-print("This message should not appear")
-```
-
 ## 8. JSON Functions
 
-NEXTHON provides functions for encoding and decoding JSON data.
-
 | Function | Description |
 |---|---|
-| `json_encode()` | Converts a value into JSON |
-| `json_decode()` | Converts JSON into a NEXTHON value |
+| `json_encode()` | Converts a value to JSON |
+| `json_decode()` | Parses JSON data |
 
 Example:
 
 ```ne
-var data = {
-    "name": "Nexform",
-    "score": 100
-}
+var player = {"name": "Nexform", "score": 150}
 
-var json = json_encode(data)
+var data = json_encode(player)
 
-print(json)
-print(json_decode(json))
+print(data)
+print(json_decode(data))
 ```
 
 ## 9. File Functions
-
-NEXTHON provides built-in functions for basic file operations.
 
 | Function | Description |
 |---|---|
 | `read_file()` | Reads a file |
 | `write_file()` | Writes content to a file |
-| `append_file()` | Appends content to a file |
-| `file_exists()` | Checks whether a file exists |
+| `append_file()` | Adds content to a file |
+| `exists()` | Checks whether a file exists |
 
 Example:
 
 ```ne
-write_file("example.txt", "Hello from NEXTHON!")
+write_file("example.txt", "Hello from NEXTHON")
 
-var content = read_file("example.txt")
+print(read_file("example.txt"))
+print(exists("example.txt"))
+```
 
-print(content)
-print(file_exists("example.txt"))
+## 10. Program Control
+
+### `exit()`
+
+Stops program execution.
+
+```ne
+exit()
 ```
 
 ## Next steps
 
 - [File Handling](file-handling.md)
 - [Collections](collections.md)
-- [Exceptions](exceptions.md)
+- [Functions](functions.md)
 - [Documentation Home](README.md)
 
 ---
