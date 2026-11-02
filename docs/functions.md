@@ -6,10 +6,10 @@ They help reduce repetition and make programs easier to maintain.
 
 ## 1. Declaring a function
 
-Use the `fun` keyword to declare a function.
+Use the `function` keyword to declare a function.
 
-```ne id="n1w3pk"
-fun greet() {
+```ne
+function greet() {
     print("Hello, World!")
 }
 ```
@@ -18,8 +18,8 @@ fun greet() {
 
 To execute a function, call it by its name followed by parentheses.
 
-```ne id="j3c8qa"
-fun greet() {
+```ne
+function greet() {
     print("Hello, World!")
 }
 
@@ -28,7 +28,7 @@ greet()
 
 Output:
 
-```text id="u4t2vw"
+```text
 Hello, World!
 ```
 
@@ -36,8 +36,8 @@ Hello, World!
 
 Functions can receive parameters.
 
-```ne id="a5m9rx"
-fun greet(name) {
+```ne
+function greet(name) {
     print("Hello,")
     print(name)
 }
@@ -45,12 +45,19 @@ fun greet(name) {
 greet("Nexform")
 ```
 
+Output:
+
+```text
+Hello,
+Nexform
+```
+
 ## 4. Returning values
 
 Use the `return` keyword to send a value back from a function.
 
-```ne id="k7p2yd"
-fun add(a, b) {
+```ne
+function add(a, b) {
     return a + b
 }
 
@@ -61,7 +68,7 @@ print(result)
 
 Output:
 
-```text id="v6n3qb"
+```text
 15
 ```
 
@@ -69,8 +76,8 @@ Output:
 
 Functions can accept multiple parameters.
 
-```ne id="c9x4lm"
-fun calculateTotal(price, quantity) {
+```ne
+function calculateTotal(price, quantity) {
     return price * quantity
 }
 
@@ -81,7 +88,7 @@ print(total)
 
 Output:
 
-```text id="f2w8za"
+```text
 60
 ```
 
@@ -89,8 +96,8 @@ Output:
 
 A recursive function is a function that calls itself.
 
-```ne id="d4j6hs"
-fun countdown(number) {
+```ne
+function countdown(number) {
     if number <= 0 {
         print("Done!")
         return
@@ -105,7 +112,7 @@ countdown(3)
 
 Output:
 
-```text id="p8r5vn"
+```text
 3
 2
 1
