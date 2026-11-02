@@ -577,6 +577,9 @@ class Parser:
     def parse_factor(self):
         token = self.current_token
         value = token.value
+        if self.current_token.token_type == TokenType.STRING:
+            self.advance()
+            return StringLiteral(value)
 
         if value in ("-", "+", "not"):
             self.advance()
@@ -590,10 +593,6 @@ class Parser:
                 return float(value)
 
             return int(value)
-
-        if self.current_token.token_type == TokenType.STRING:
-            self.advance()
-            return StringLiteral(value)
 
         if value == "true":
             self.advance()
