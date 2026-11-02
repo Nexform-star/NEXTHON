@@ -1,7 +1,8 @@
-function square(number) {
-    return number * number
-}
+var score = 17
+var number = 12
 
-function double(number) {
-    return number * 2
-}
+print(score + number)
+print(score - number)
+print(score * number)
+print(score / number)
+print(score % number)
